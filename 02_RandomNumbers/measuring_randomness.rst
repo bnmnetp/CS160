@@ -31,7 +31,10 @@ Implement the following measures and use them to gather data for the middle-squa
   2.  1 -- 100
   3.  Choose your own range.
 
-3.  Do repeating sequences occur within a particular range of random numbers?  Again using the randrange function we want to search for a repeating sequence.  You may want to think for a minute why this is a different problem that number 1.
+3.  Do repeating sequences occur within a particular range of random numbers?  Again using the randrange function we want to search for a repeating sequence.  You may want to think for a minute why this is a different problem that number 1.  Searching for a repeated sequence is a pretty interesting problem all by itself.  You may want to think about the problem in two parts:
+
+  1.  Suppose the you are searching for a repeating sequence and are assuming that it starts at the beginning of a list.
+  2.  Generalize part 1 by trying out many (all possible?) starting points.  That is if you don't find a repeating sequence that starts at position 0 of the original list, may you can find one that starts at position 1 and so on.
 
 
 
@@ -66,15 +69,22 @@ newseed = (oldseed*oldseed) % M
 Where M is the product of p and q which are two primes that are congruent to 3 (mod 4).  For example, p = 11 and q = 19
 
 
-3.  Fibbonaci Sequence
+3.  Fibonacci Sequence
 
-The Fibbonaci sequence is well know to be
+The Fibonacci sequence is a well known sequence.  You may have programmed this in CS150 already.  If you recall that the first two numbers in the sequence are 1 and 1 then you get the sequence:
 
 ```
-newnumber = (lastnumber + second_to_last) % M
+1 1 2 3 5 8 13 21 34
 ```
 
-In this case M is usually chosen to be 2^32 or 2^64 to keep the numbers from exploding.
+The expression for generating the next number is:
+
+```
+newnumber = (lastnumber + second_to_last)
+return newnumber % M
+```
+
+In this case M is usually chosen to be 2**32 or 2**64 to keep the numbers from exploding.  In addition the seed provided to the Fibonacci random number generator constructor should be considered to be the nth Fibonacci number.
 
 
 4.  Xorshift  -- https://en.wikipedia.org/wiki/Xorshift  -- This one is slightly more challenging in that it requires some bit-twiddling so I'll leave it to the more adventurous to read the description and give it a try.
