@@ -25,6 +25,10 @@ Implement the following measures and use them to gather data for the middle-squa
   4.  105557
   5.  A number of your choosing
 
+
+After you have done this, do Part 3, then come back and do the next two measurements for both of your Random number generators.
+
+
 2.  What is the distribution of the numbers in a particular range, over a very large number of random numbers.  Using the randrange method of your class, generate 1 million random numbers.  Keep track of how many times each number in the range is chosen.  try the following ranges:
 
   1.  1 -- 6
