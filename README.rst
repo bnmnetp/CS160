@@ -18,7 +18,7 @@ Weekly Goals
   * Write a new MSDie class which can represent more than numbers on each side.  *Hint:* The constructor should take a list of values as a parameter.
   * Add a Cup Class that can roll multiple dice.
   * Algorithms for Random Numbers
-  
+
     * algorithm 1: middle-Square
     * algorithm 2: Multiplicative Linear Congruential Generators
     * algorithm 3: Fibbonacci
@@ -27,4 +27,8 @@ Weekly Goals
 
 * Week of February 14
 
-  * Crazy 8's
+  * Discussion and finishing up Random lab -- Hand in on Wednesday
+  * Crazy 8's Project  -- Card, Deck, Hand, and Player classes
+  * Introduce Algorithm Analysis ideas
+
+  
