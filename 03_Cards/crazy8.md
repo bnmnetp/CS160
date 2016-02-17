@@ -46,6 +46,7 @@ The Pile class is used mainly for the discard pile, when first created a pile ha
 * `topSuit()` -- return the suit of the card on the top of the pile without removing it from the pile
 * `__str__()` -- return the string representing the top card on the deck in the form of 'rank of suit'
 * `size()` -- returns the number of cards in the pile.
+* `removeAll()` -- method returns a list of all of the cards in the pile, and resets the Pile to be empty.
 
 ### Hand
 
@@ -63,6 +64,31 @@ The Hand class is similar to Pile, but it should allow you to remove any card fr
 * Bonus:  -- can you implement your Hand so that myHand[i] behaves just like myHand.cardAt(i)
 
 Of course you may think, "I could just do all of this stuff with a list!"  But, the point of this part of the assignment is to think about abstractions.   Yes, we could do this with simple lists, but the abstractions that these classes provide will make it much easier for your program to work with, and make your end code much easier to read and understand.
+
+### example
+
+The following is an example of how some of the methods of the differnt object interact.
+
+```python
+d = Deck()
+myHand = Hand()
+discardPile = Pile()
+d.shuffle()
+
+# deal
+for i in range(7):
+    c = d.draw()
+    myHand.add(c)
+
+# Play a card
+c = myHand.remove(5)
+discardPile.add(c)
+
+# deck is empty, time to restock
+if d.size() == 0:
+    d.restock(discardPile.removeAll())
+
+```
 
 ### Due
 
