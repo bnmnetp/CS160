@@ -56,7 +56,11 @@ The Hand class is similar to Pile, but it should allow you to remove any card fr
 * `findCard(rank, suit)` -- returns the position (as an integer) of the card having rank and suit or -1 if the card is not found
 * `findRank(rank)` -- returns a list of the  positions of the cards that have the given rank
 * `findSuit(suit)` -- returns a list of the positions of the cards that have the given suit
+* `cardAt(pos)` -- returns the card at the given position.
+* Bonus:  -- can you implement your Hand so that myHand[i] behaves just like myHand.cardAt(i)
 
 Of course you may think, "I could just do all of this stuff with a list!"  But, the point of this part of the assignment is to think about abstractions.   Yes, we could do this with simple lists, but the abstractions that these classes provide will make it much easier for your program to work with, and make your end code much easier to read and understand.
 
-I will provide you with a set of unit tests to make sure your class is working correctly.
+### Due
+
+These classes are due on Monday February 22 at 11:59PM.  You should try to have most of it done before class on Monday in case you have questions.  
