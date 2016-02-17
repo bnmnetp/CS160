@@ -28,6 +28,7 @@ The `Deck` class is a bit more complicated, but like the Cup for the dice its ma
 * `shuffle()` This method should mix up the deck so that the cards are not in a predictable order.  Use Python's built in random module to help with this, do not use your own Rand class.
 * `draw()` This method should take the top Card from the deck and return it, removing it from the Deck.
 * `restock(cardlist)` This method should take a list of Cards and add them back into the Deck.  The restocked cards should come after any few cards that might be remaining in the original deck.
+* `size()` returns an int with the number of cards left in the deck.
 
 You will need to write a  Deck class including each of these methods using the API that I have described above.
 
@@ -44,6 +45,7 @@ The Pile class is used mainly for the discard pile, when first created a pile ha
 * `topRank()` -- return the rank of the card on the top of the pile without removing it from the pile
 * `topSuit()` -- return the suit of the card on the top of the pile without removing it from the pile
 * `__str__()` -- return the string representing the top card on the deck in the form of 'rank of suit'
+* `size()` -- returns the number of cards in the pile.
 
 ### Hand
 
@@ -57,6 +59,7 @@ The Hand class is similar to Pile, but it should allow you to remove any card fr
 * `findRank(rank)` -- returns a list of the  positions of the cards that have the given rank
 * `findSuit(suit)` -- returns a list of the positions of the cards that have the given suit
 * `cardAt(pos)` -- returns the card at the given position.
+* `size()` -- returns the number of cards in your hand
 * Bonus:  -- can you implement your Hand so that myHand[i] behaves just like myHand.cardAt(i)
 
 Of course you may think, "I could just do all of this stuff with a list!"  But, the point of this part of the assignment is to think about abstractions.   Yes, we could do this with simple lists, but the abstractions that these classes provide will make it much easier for your program to work with, and make your end code much easier to read and understand.
