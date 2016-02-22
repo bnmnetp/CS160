@@ -31,4 +31,14 @@ Weekly Goals
   * Crazy 8's Project  -- Card, Deck, Hand, and Player classes
   * Introduce Algorithm Analysis ideas
 
-  
+* Week of February 20
+
+  * Questions on part 1 of the crazy 8 assignment
+
+    * Making attributes read only
+    * A "Fancy" python trick for making simple read only classes
+
+  * Finish up finding the longest sequence
+  * Inheritance
+  * Discuss and start part 2 of Crazy 8's
+  * More on Big-O analysis  -- Read Chapter on Analysis
