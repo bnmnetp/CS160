@@ -36,6 +36,7 @@ Weekly Goals
   * Questions on part 1 of the crazy 8 assignment
 
     * Making attributes read only
+    * See here for `visualization:  <http://www.pythontutor.com/visualize.html#code=import+random%0Aimport+collections%0A%0Arandom.seed(42%29%0A%0Aclass+MSDie%3A%0A++++def+__init__(self,+num_sides%29%3A%0A++++++++self.num_sides+%3D+num_sides%0A++++++++self.__value+%3D+random.randrange(num_sides%29+%2B+1%0A%0A++++def+getValue(self%29%3A%0A++++++++return+self.__value%0A%0A++++def+roll(self%29%3A%0A++++++++self.__value+%3D+random.randrange(self.num_sides%29+%2B+1%0A++++++++return+self.__value%0A%0A%0AmyDie+%3D+MSDie(6%29%0A%23print(myDie.__value%29%0Aprint(myDie.getValue(%29%29%0AmyDie.__value+%3D+9%0Aprint(myDie.__value%29%0A%23print(myDie.getValue(%29%29&mode=display&origin=opt-frontend.js&cumulative=false&heapPrimitives=false&textReferences=false&py=3&rawInputLstJSON=%5B%5D&curInstr=15>`_
     * A "Fancy" python trick for making simple read only classes
 
   * Finish up finding the longest sequence
