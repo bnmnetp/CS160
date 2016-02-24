@@ -90,6 +90,42 @@ if d.size() == 0:
 
 ```
 
-### Due
+### Due Date for Part I
 
 These classes are due on Monday February 22 at 11:59PM.  You should try to have most of it done before class on Monday in case you have questions.  
+
+# Part II  A Special Pile (CrazyPile)
+
+In this second part of the assignment we will create a CrazyPile class that is a subclass of the Pile class.  We need this class because we want the pile for crazy 8's to behave a little bit different than a generic pile.  Specifically it must handle the following requirements:
+
+* When a card is put on the pile it must follow the rules of Crazy 8's. ([See here for Basic Rules](https://www.pagat.com/eights/crazy8s.html) )  If the card is not a legal play then the deck should cause the program to end by creating an error. You should modify the `add` method to enforce the rules so that an illegal card is not actually added to the top of the pile. Legal plays include:
+
+   * Any card who's suit matches the suit on top of the pile
+   * Any card who's rank matches the rank of the card on top of the pile
+   * An 8
+   * Any card who's suit matches the crazy_suit immediately after an 8 is played
+
+* The pile must also handle the case of an 8 being played.  If an 8 is played on top of the pile no other card may be played until a crazy suit is named. using the method:  `setCrazySuit(suit_name)`  In order for a player to find out the crazy suit we also need a method called `getCrazySuit()`  The `getCrazySuit` method should return the suit set by the player who played the 8, or None if an 8 is not on top of the pile.
+
+Once you have built your CrazyPile class then you should write a small program that demonstrates that it is working correctly.
+
+* It must allow a legal play
+* It must raise an exception for an illegal play
+* It must allow a crazy suit to be set and enforce the legal play after a crazy suit is set, or raise an exception if an illegal play is made following a crazy suit.
+* It must follow the rules for the play after a card has been played on an 8.
+
+### Due Date for Part II
+
+The CrazyPile is due Friday February 26.
+
+
+# Part III  Players play the game
+
+In this final part of the assignment you will write a ``Player`` class.  Your instance of a player class can play against a player class written by one of your classmates.  the player class must properly play the game of crazy 8's or you will be disqualified.
+
+Your class must implement the following methods:  (it may also implement others, so make your code nicer, but these must be available to participate in the tournament)
+
+* drawOneCard(theDeck)   -- Draw a card from theDeck and add it to the players hand.  Used for dealing the initial hand.
+* playOneTurn(theDeck, theDiscardPile) -- This method is really the heart of the game.  It must make a legal play from the player's hand.  If the play results in the players hand being empty it should return True to indicate that it has finished the game.  Otherwise it should return false.
+* getName() -- every player should have a name.  This simply returns a string representing the name of the player.  This is used for showing who won.
+*
