@@ -128,6 +128,7 @@ Your class must implement the following methods:  (it may also implement others,
 * `drawOneCard(theDeck)`   -- Draw a card from theDeck and add it to the players hand.  Used for dealing the initial hand.
 * `playOneTurn(theDeck, theDiscardPile)` -- This method is really the heart of the game.  It must make a legal play from the player's hand.  If the play results in the players hand being empty it should return True to indicate that it has finished the game.  Otherwise it should return false.
 * `getName()` -- every player should have a name.  This simply returns a string representing the name of the player.  This is used for showing who won.
+* `myHand` This should be a property of the Player to hold the Hand object.
 
 Simple Testing
 
@@ -136,7 +137,7 @@ You can test your program initially by just having a single player try to play s
 ```python
 theDeck = Deck()
 theDeck.shuffle()
-discardPile = Pile()
+discardPile = CrazyPile()
 
 p1 = Computer('Computer')
 
@@ -146,18 +147,18 @@ for i in range(7):
     p1.drawOneCard(theDeck)
     print(p1.myHand)
 
-discardPile.putOnTop(theDeck.draw())
+discardPile.add(theDeck.draw())
 
 # have the player try to play 5 turns against itself
 for i in range(5):
-     print(p1.myHand)
+     print(p1.myHand)  
      print("top of deck = %s of %s" % (discardPile.topRank(), discardPile.topSuit()))
-     if theDeck.getNumCards() == 0:
+     if theDeck.size() == 0:
             theDeck.restock(discardPile.removeAll())
      done = p1.playOneTurn(theDeck, discardPile)
 ```
 
-Once you have this working well, you can modify the for loop to a `while not done` loop and allow the player to play until the end.
+Once you have this working well, you can modify the for loop to a `while not done` loop and allow the player to play until the end.  If you add some judicious print statements to your player class, you can watch what the player does to make certain it is making legal/good plays, and that the hand and pile is being managed correctly.
 
 It is also quite easy to make two players and modify the loop so that they alternate.
 
