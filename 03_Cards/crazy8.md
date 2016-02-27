@@ -154,7 +154,9 @@ for i in range(5):
      print(p1.myHand)  
      print("top of deck = %s of %s" % (discardPile.topRank(), discardPile.topSuit()))
      if theDeck.size() == 0:
+            saveTop = theDiscardPile.remove()
             theDeck.restock(discardPile.removeAll())
+            theDiscardPile.add(saveTop)
      done = p1.playOneTurn(theDeck, discardPile)
 ```
 
