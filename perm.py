@@ -1,3 +1,5 @@
+import timeit
+import time
 
 class Stack:
     def __init__(self):
@@ -25,13 +27,17 @@ def perms(word):
         stack.push(l)
     results = [stack.pop()]
     while stack.size() != 0:
-        c = stack.pop()
-        new_results = []
+        newLetter = stack.pop()
+        newResults = []
         for w in results:
-            for i in range(len(w)+1):
-                new_results.append(w[:i] + c + w[i:])
-        results = new_results
+            for insertPosition in range(len(w)+1):
+                newResults.append(w[:insertPosition] + newLetter + w[insertPosition:])
+        results = newResults
     return results
 
+start = time.time()
+print(len(perms("abcdefghijkl")))
+end = time.time()
+print(end-start)
 
-print(perms("lut"))
+#print(timeit.timeit('perms("dog")',setup=setup))
