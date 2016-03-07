@@ -20,13 +20,15 @@ We will use an algorithm that employs both a Stack and a Queue. Here's how the a
 
 1.  Add the starting word to a set of used words -- Use Python's `set` instead of list for speed.
 
-2.  Get the starting word and search through the dictionary to find all words that are one letter different, and have not already been used. For example suppose the current word is bend the word send and band would qualify because they all the letters are the same in 3 of the four places only one letter has changed. The word ends would not qualify even though it has three letters that are the sam, but they are in different positions.
+2.  Get the starting word and search through the source of new words to find all words that are one letter different, and have not already been used. For example suppose the current word is bend the word send and band would qualify because they all the letters are the same in 3 of the four places only one letter has changed. The word ends would not qualify even though it has three letters that are the same, but they are in different positions.
 
-3.  Create stacks for each pair of words containing the starting word (pushed first) and the word that is one letter different (pushed on top). Add these words to the **set of used words**.
+3.  Create stacks for each pair of words containing the starting word (pushed first) and the word that is one letter different (pushed on top).
 
-4.  Enqueue each of these stacks onto a queue. You now have created a queue of stacks!
+4.  Add these new words to your set of used words so you don't use them again.
 
-5.  Now dequeue the first stack from the queue, look at its top word and compare it with the ending word. If they are equal you are done, and this stack reprsents the word ladder. Otherwise find all the unused words that are one letter different from the word on top of the stack. For each of these words:
+5.  Enqueue each of these stacks onto a queue. You now have created a queue of stacks!
+
+5.  Now dequeue the first stack from the queue, look at its top word and compare it with the ending word. If they are equal you are done, and this stack represents the word ladder. Otherwise find all the unused words that are one letter different from the word on top of the stack. For each of these words:
 
     4.1 Make **a clone** of the current stack and push this word onto the clone.
 
@@ -60,7 +62,7 @@ I'm giving you all of this in one big writeup, but you NEED to have a strategy f
 
 1.  Write a function that reads the words.txt file and creates three sets of words.
 2.  Write a function that takes a particular word, and the set of words that are the same length, and then returns all of the words that are the different by one letter.
-3.  Implement the Stack and Queue classes as we have done in class, or follow the book.  Implement a clone method for your Stack class.
+3.  Implement the Stack and Queue classes as we have done in class, or follow the book.  Implement a clone method for your Stack class. It is really important to get the clone method right.  A correct clone method will create a brand new stack, with the same set of words pushed onto the new stack in the same order as the stack you are cloning.  Many people get this wrong by making a new stack but having using something like `newstack.items = self.items`  This statement makes the items of the newstack reference *the same* list as the current stack, which will means that if you push something on to newstack it will also be pushed onto the old stack as well.
 4.  Implement the word ladder solution using all of the parts above.
 
 
