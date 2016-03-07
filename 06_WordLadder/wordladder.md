@@ -67,7 +67,7 @@ I'm giving you all of this in one big writeup, but you NEED to have a strategy f
 Grading
 =======
 
-This assignment is worth 20 points, distributed as follows:
+This assignment is worth 30 points, distributed as follows:
 
 -   5 points for implementing the Queue and Stack classes with a good clone method.
 -   5 points for creating sets of words of the right length
