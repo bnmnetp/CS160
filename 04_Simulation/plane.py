@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import random
+import turtle
 from pythonds.basic import Queue
+import time
 
 # Boarding Strategies
 # 1.  All Passengers all random
@@ -20,13 +22,36 @@ class Passenger:
 
 num_rows = 36
 num_zones = 6
+num_cols = 7
 
-def timeOneBoarding(num_rows,num_zones):
+win = turtle.Screen()
+win.setup(width=num_rows*20,height=num_cols*20)
+win.setworldcoordinates(0,0,num_rows,num_cols)
+tlist = []
+win.tracer(0)
+
+for i in range(num_rows):
+    tlist.append([])
+    for j in range(num_cols):
+        nt = turtle.Turtle()
+        nt.speed(0)
+        nt.up()
+        nt.goto(i,j)
+        nt.shape('square')
+        nt.fillcolor('gray')
+        tlist[i].append(nt)
+
+win.update()
+
+
+def timeOneBoarding(num_rows,num_zones,tlist):
     passlist = []
+    seatmap = {'a':6, 'b':5,'c':4, 'd':2,'e':1,'f':0}
 
     for row in range(1, num_rows):
         for seat in "abcdef":
-            passlist.append(Passenger(row=row, seat=seat, zone=row//(num_rows//num_zones), delay=random.randrange(1, 6)))
+            passlist.append(Passenger(row=row, seat=seat, zone=row // (num_rows // num_zones), delay=random.randrange(1, 6)))
+            #passlist.append(Passenger(row=row, seat=seat, zone=random.randrange(num_zones), delay=random.randrange(1, 6)))
 
     random.shuffle(passlist)
     boardingQueue = Queue()
@@ -38,7 +63,7 @@ def timeOneBoarding(num_rows,num_zones):
             boardingQueue.enqueue(p)
 
     aisle = [False for i in range(num_rows)]
-    time = 0
+    simtime = 0
     while not boardingQueue.isEmpty() or (not all([not p for p in aisle])):
         # iterate over the aisle, if a passenger can move towards the back then do it
         # if a passenger can move into their seat and has taken long enough then do it
@@ -47,25 +72,33 @@ def timeOneBoarding(num_rows,num_zones):
             if aisle[pos] == False:
                 if aisle[pos-1] != False and aisle[pos-1].row > pos-1:
                     aisle[pos] = aisle[pos-1]
+                    tlist[pos][3].fillcolor('blue')
                     aisle[pos-1] = False
+                    tlist[pos-1][3].fillcolor('gray')
             elif aisle[pos].row == pos:
                 if aisle[pos].delay == 0:
                     print("seating passenger in row {} seat {}".format(aisle[pos].row, aisle[pos].seat))
+                    tlist[aisle[pos].row][seatmap[aisle[pos].seat]].fillcolor('green')
                     aisle[pos] = False
+                    tlist[pos][3].fillcolor('gray')
                 else:
+                    tlist[pos][3].fillcolor('red')
                     aisle[pos].delay -= 1
         if aisle[0] == False:
             if not boardingQueue.isEmpty():
                 aisle[0] = boardingQueue.dequeue()
 
-        time += 1
+        win.update()
+        simtime += 1
+        time.sleep(0.1)
 
 
-    print("Total Boarding Time = {}".format(time))
-    return time
+    print("Total Boarding Time = {}".format(simtime))
+    return simtime
 
 total = 0
-for i in range(100):
-    total += timeOneBoarding(num_rows,num_zones)
+for i in range(1):
+    total += timeOneBoarding(num_rows,num_zones,tlist)
 
 print("Average = {}".format(total/100))
+win.exitonclick()
