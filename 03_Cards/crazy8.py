@@ -88,6 +88,9 @@ class Hand:
     def cardAt(self,pos):
         return self.myCards[pos]
 
+    def __str__(self):
+        return str([str(x) for x in self.myCards])
+
 
 class Deck:
     def __init__(self):
@@ -236,7 +239,7 @@ class Player:
             self.drawOneCard(currentDeck)
             return
 
-        if play.getRank() == '8':
+        if play.rank == '8':
             crazySuit = self.chooseCrazySuit()
             currentPile.setCrazySuit(crazySuit)
         else:
@@ -251,9 +254,9 @@ class Player:
         if currentPile.hasCrazySuit():
             return play.suit == currentPile.getCrazySuit() or play.rank == '8'
         else:
-            if play.suit == currentPile.lookAtTop().getSuit() or \
-                            play.getRank() == currentPile.lookAtTop().getRank() or \
-                            play.getRank() == '8':
+            if play.suit == currentPile.lookAtTop().suit or \
+                            play.rank == currentPile.lookAtTop().rank or \
+                            play.rank == '8':
                 return True
             else:
                 return False
@@ -270,15 +273,15 @@ class Computer(Player):
         if currentPile.hasCrazySuit():
             playSuit = currentPile.getCrazySuit()
         else:
-            playSuit = currentPile.lookAtTop().getSuit()
-        playRank = currentPile.lookAtTop().getRank()
+            playSuit = currentPile.lookAtTop().suit
+        playRank = currentPile.lookAtTop().rank
         numCards = self.myHand.size()
         found = False
         c = 0
         while c < numCards and not found:
-            if (playSuit == self.myHand[c].getSuit() or
-                        playRank == self.myHand[c].getRank()) and \
-                            self.myHand[c].getRank() != '8':
+            if (playSuit == self.myHand[c].suit or
+                        playRank == self.myHand[c].rank) and \
+                            self.myHand[c].rank != '8':
                 found = True
             c += 1
 
@@ -286,7 +289,7 @@ class Computer(Player):
         if not found:
             c = 0
             while c < numCards and not found:
-                if (self.myHand[c].getRank()[0]) == '8':
+                if (self.myHand[c].rank[0]) == '8':
                     found = True
                 c += 1
         if found:
@@ -297,7 +300,7 @@ class Computer(Player):
     def chooseCrazySuit(self):
         sd = {}
         for c in self.myHand.myCards:
-            sd[c.getSuit()] = sd.get(c.getSuit(), 0) + 1
+            sd[c.suit] = sd.get(c.suit, 0) + 1
 
         best = 0
         suit = ''
@@ -313,18 +316,18 @@ class BetterComputer(Computer):
         if currentPile.hasCrazySuit():
             playSuit = currentPile.getCrazySuit()
         else:
-            playSuit = currentPile.lookAtTop().getSuit()
-        playRank = currentPile.lookAtTop().getRank()
+            playSuit = currentPile.lookAtTop().suit
+        playRank = currentPile.lookAtTop().rank
         legalCards = []
         for c in self.myHand:
-            if c.getSuit() == playSuit:
+            if c.suit == playSuit:
                 legalCards.append(c)
-            elif c.getRank() == playRank:
+            elif c.rank == playRank:
                 legalCards.append(c)
 
         sd = {}
         for c in legalCards:
-            sd[c.getSuit()] = sd.get(c.getSuit(), 0) + 1
+            sd[c.suit] = sd.get(c.suit, 0) + 1
 
         best = 0
         suit = ''
@@ -333,10 +336,10 @@ class BetterComputer(Computer):
                 best = sd[k]
                 suit = k
 
-        longSuit = [x for x in legalCards if x.getSuit() == suit]
+        longSuit = [x for x in legalCards if x.suit == suit]
         longSuit2 = []
         if len(longSuit) > 1:
-            longSuit2 = [x for x in longSuit if x.getRank() != 8]
+            longSuit2 = [x for x in longSuit if x.rank != 8]
         if len(longSuit2) > 0:
             idx = self.myHand.myCards.index(longSuit2[0])
         elif len(longSuit) > 0:
