@@ -59,3 +59,16 @@ Weekly Goals
   * Crazy 8's Tournament?
   * Project 2:  Word Ladders  (Queues of Stacks!!?!)
   * Lists and their implementation
+
+* Week of March 14
+
+  * Finish linked list implementation
+  * Compare our implementation with Python's implementation
+  * Wednesday exam
+
+    * Chapters 1 - 3
+    * Classes - implementing a simple class
+    * Big O notation and algorithm analysis
+    * Queues
+    * Stacks
+    * Linked lists
