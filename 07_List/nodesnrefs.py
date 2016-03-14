@@ -35,10 +35,12 @@ class UnorderedList:
         previous = None
         while currentNode != None:
             if currentNode.data == item:
-                # remove the item
-                previous.next = currentNode.next
+                if previous == None:
+                    self.head = currentNode.next
+                else:
+                    previous.next = currentNode.next
                 currentNode.next = None
-                return
+                break
             else:
                 previous = currentNode
                 currentNode = currentNode.next
@@ -53,5 +55,6 @@ mylist.print()
 mylist.remove(5)
 
 mylist.print()
+mylist.remove(0)
 
 
