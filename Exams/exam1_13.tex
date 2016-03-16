@@ -1,0 +1,146 @@
+\documentclass[11pt]{exam}
+\usepackage{listings}
+\usepackage{pdfsync}
+
+%
+%  Created by Brad Miller on 2006-03-07.
+%  Copyright (c) 2006 Luther College. All rights reserved.
+%
+%
+
+\usepackage{subfigure}
+\usepackage[pdftex]{graphicx}
+
+%
+%  Update these values for running headers
+%
+\firstpageheader{\bf\Large CS-151}{\bf\Large Stacks, Queues, and Analysis}{\bf\Large
+  2013-03-20 }
+\runningheader{CS 151}{}{Exam-1}
+\addpoints
+
+\begin{document}
+
+\begin{center}
+  \fbox{\fbox{\parbox{5.5in}{\centering This Exam is being given under
+        the guidelines of the \textbf{Honor Code}. You are expected to
+        respect those guidelines and to report those who do not.
+        Answer the questions in the spaces provided. If you run out of
+        room for an answer, continue on the back of the page.  There are
+      \numquestions\  questions for a total of  \numpoints\ points.}}}
+\end{center}
+
+% setup standard options for the including code fragments
+\lstset{language=Python,numbers=left}
+
+\vspace{0.1in}
+\hbox to \textwidth{Name:\enspace\hrulefill}
+
+% Questions start here:
+\begin{questions}
+
+% \question Suppose you are writing an application to keep the payroll for some company.  Your application consists of \textit{at least} three classes:  \texttt{Person}, \texttt{Manager}, and \texttt{Worker}.  A \texttt{Person}  has a name and year of birth.  A \texttt{Worker} has a department and a monthly salary. A \texttt{Manager} has a department and a salary and a bonus equal to 10\% of their salary.  Hint:  Sometimes it can make your life easier if you introduce an ``extra'' class into your hierarchy to accomodate two classes that are similar.
+
+% \begin{parts}
+% 	\part[10] Implement the classes of your inheritance hierarchy.  In particular you should write an efficient constructor for each class, and an \verb~__str__~ method for each class, and a \texttt{compensation} method that returns the total yearly compensation.
+% 	\vspace{5in}
+% \end{parts}
+
+% \newpage
+
+
+\question[5] Convert the following expression to its Postfix form.  You do not need to demonstrate the algorithm, just write the final form.
+$$A~*~B~+~C~/~D$$
+\vspace{1.5in}
+
+\question[5] Show how the stack is used in evaluating the following postfix expression.  Make sure you show the stack at enough stages to convince me that you understand the algorithm.
+$$7~13~*~12~8~-~4~+~10~*~+$$
+\vspace{1.5in}
+
+\newpage
+\question[5] Rank the following functions in order from slowest
+growing to fastest.
+\begin{itemize}
+\item $N$
+\item $N log(N)$
+\item $1$
+\item $log(N)$
+\item $N^2$
+\end{itemize}
+
+\question[5] Give the Big-O limits for the following Python operations.
+\begin{itemize}
+\item \texttt{list.insert(0)}
+\item \texttt{dict[key] = value}
+\item \texttt{list.pop()}
+\item \texttt{dict[x] = 5}
+\item \texttt{list.append()}
+\end{itemize}
+
+\newpage
+
+\question[10] For this question you must implement a \texttt{Queue} class.  However you may \textbf{not} use a Python list in your implementation.  You \textbf{must} use The \textit{Node}  class shown below.   Implement the methods \verb!__init__!, \texttt{enqueue}, \texttt{dequeu}, and \texttt{isempty}.
+\begin{verbatim}
+	class Node:
+    def __init__(self,initdata):
+        self.data = initdata
+        self.next = None
+
+    def getData(self):
+        return self.data
+
+    def getNext(self):
+        return self.next
+
+    def setData(self,newdata):
+        self.data = newdata
+
+    def setNext(self,newnext):
+        self.next = newnext
+\end{verbatim}
+
+\newpage
+
+
+%Given a singly linked list, how could the list be printed in reverse order in O(n)?
+
+
+\question Using the following code fragment:
+\begin{lstlisting}
+sum = 0
+for i in range(n):
+   for j in range(n):
+         sum = sum + 1
+for p in range(0,n*n):
+   for q in range(n):
+      sum = sum - 1
+for s in range(20):
+   for t in range(5):
+      sum = sum + 1
+\end{lstlisting}
+\begin{parts}
+  \part[3] Using Big-O notation, What is the worst case performance
+   for the set of loops in lines 2--4?
+   \vspace{0.5in}
+  \part[3] Using Big-O notation, What is the worst case performance
+   for the set of loops in lines 5--7?
+   \vspace{0.5in}
+  \part[3] Using Big-O notation, What is the worst case performance
+   for the set of loops in lines 8--10?
+   \vspace{0.5in}
+  \part[3] Using Big-O notation, What is the overall worst case performance?
+   \vspace{0.5in}
+\end{parts}
+\emph{Hint:}  Make sure you pay close attention to the arguments to range.
+
+
+\newpage
+\question[10] For this question you must implement a \texttt{Stack} class.  However you may \textbf{not} use a list in your implementation.  You \textbf{must} use two \texttt{Queues}.  Implement the methods \verb!__init__!, \texttt{push}, \texttt{pop}, and \texttt{isempty}.
+\vspace{4.5in}
+
+
+\end{questions}
+
+
+\end{document}
+

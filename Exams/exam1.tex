@@ -1,0 +1,161 @@
+\documentclass[11pt,letter]{exam}
+\usepackage{listings}
+
+\firstpageheader{\bf\Large CS 151}{\bf\Large Exam-1}{\bf\Large
+  March 4, 2004}
+\runningheader{CS 151}{}{Exam-1}
+\addpoints
+
+\begin{document}
+\begin{center} 
+  \fbox{\fbox{\parbox{5.5in}{\centering This Quiz is being given under
+        the guidelines of the \textbf{Honor Code}. You are expected to
+        respect those guidelines and to report those who do not.
+        Answer the questions in the spaces provided. If you run out of
+        room for an answer, continue on the back of the page.  There are
+      \numquestions\  questions for a total of  \numpoints\ points.}}}
+\end{center} 
+\lstset{language=Java,numbers=left}
+
+\vspace{0.1in} 
+\hbox to \textwidth{Name:\enspace\hrulefill} 
+
+
+\begin{questions}
+%%
+%% File manipulation
+
+\question
+Given the following command and output:
+\begin{verbatim}
+binkley:testDir> ps -aux
+USER       PID %CPU %MEM   VSZ  RSS TTY      STAT START   TIME COMMAND
+root       716  0.0  0.0  1364  424 ?        S    Feb22   0:00 klogd -x
+rpc        736  0.0  0.1  1528  568 ?        S    Feb22   0:14 portmap
+rpcuser    764  0.0  0.1  1616  688 ?        S    Feb22   0:26 rpc.statd
+nscd      1022  0.0  0.2 13460 1188 ?        S    Feb22   0:00 /usr/sbin/nscd
+nscd      1023  0.0  0.2 13460 1188 ?        S    Feb22   0:06 /usr/sbin/nscd
+lp        1085  0.0  0.1  3300  904 ?        S    Feb22   0:00 lpd Waiting  
+root      1116  0.0  0.0  1780  512 ?        S    Feb22   0:00 rpc.rquotad
+root      1121  0.0  0.2  2388 1488 ?        S    Feb22   0:01 rpc.mountd
+root      1133  0.0  0.0     0    0 ?        SW   Feb22   1:38 [nfsd]
+root      1134  0.0  0.0     0    0 ?        SW   Feb22   0:05 [lockd]
+root      1135  0.0  0.0     0    0 ?        SW   Feb22   0:00 [rpciod]
+root      1154  0.0  0.0  1660  392 ?        S    Feb22   0:00 rpc.yppasswdd
+daemon    1341  0.0  0.0  1360  396 ?        S    Feb22   0:00 /usr/sbin/atd
+leekent   1445  0.0  0.1 207812 876 ?        S    Feb22   0:00 /usr/java/j2re1
+root      1575  0.0  0.1  1620  632 ?        S    Feb22   0:00 CROND
+apache   23658  0.0  0.7 79480 3768 ?        S    Feb29   0:00 /usr/sbin/httpd 
+bmiller  24333  0.0  0.2  2540 1356 pts/0    S    Feb29   0:00 -bash
+bmiller  24363  0.0  0.3  3016 1668 pts/0    S    Feb29   0:00 ssh turing
+postgres 26952  0.0  0.7 15692 3680 ?        S    08:08   0:00 postgres: 
+bmiller  27979  0.4  0.2  2548 1384 pts/1    S    12:31   0:00 -bash
+bmiller  28009  0.0  0.1  2564  640 pts/1    R    12:31   0:00 ps -aux
+\end{verbatim}
+\begin{parts}
+  \part[2] How would you modify the command to show only the processes
+  owned by the user bmiller?
+  \vspace{0.5in} 
+
+  \part[2] What command would you use to count the number of processes
+  owned by root?
+  \vspace{0.5in} 
+
+  \part[2] What effect would the command \texttt{kill 1445} have if it
+  was run by user postgres?
+  \vspace{0.5in} 
+
+  \part[2] What effect would the command \texttt{kill 1445} have if it
+  was run by user root?
+  \vspace{0.5in} 
+  \part[2] Suppose you wanted to save the output from this command to
+  a file, sorted by username.  Show the command you would use to sort and write
+  to a file. 
+\end{parts}
+
+\question[5] Rank the following functions in order from slowest
+growing to fastest.
+\begin{itemize}
+\item $N$
+\item $N log(N)$
+\item 10
+\item $log(N)$
+\item $N^2$
+\end{itemize}
+
+\question Using the following code fragment:
+\begin{lstlisting}
+for(int i = 0; i<n;i++) 
+   for(int j = 1; j <=n; j++)
+      for(int k = i; k<=j; k++)
+         sum++;
+for( int p = 0; p < n*n; p++) {
+   for (int q = 0; q < p; q++) {
+      sum--;
+\end{lstlisting}
+\begin{parts}
+  \part[4] Using Big-O notation, What is the worst case performance
+   for the set of loops in lines 1--4?
+   \vspace{0.5in}
+  \part[4] Using Big-O notation, What is the worst case performance
+   for the set of loops in lines 5--7?
+   \vspace{0.5in}
+  \part[4] Using Big-O notation, What is the overall worst case performance?
+   \vspace{0.5in}
+\end{parts}
+
+\question
+An algorithm takes 3.75 seconds for an input size of 100.  How large of a
+problem can be solved in one minute if the algorithm is:
+\begin{parts}
+  \part[5] $O(N)$
+  \vspace{1in}
+
+  \part[5] $O(N^2)$
+  \vspace{1in}
+
+  \part[5] $O(log(N))$  Hint:  $log_{2}(2^n) = n$
+  \vspace{1in}
+
+Make sure you show your work.
+\end{parts}
+
+
+\question[5] What kind of data structure would you use to schedule
+jobs for a printer?
+
+
+\question[5] What kind of data structure would you use to access
+information about books, using the library of congress call
+letters/numbers as the key. 
+
+\question  For each of the following operations, tell which data
+structure provides the more efficient implementation (ArrayList of
+LinkedList).  The two data structures may also be provide an
+equivalent implementation.  Justify your answer.
+\begin{parts}
+\part[4] \texttt{addFirst(Object o)} : add object at the first position.
+\vspace{0.5in}
+\part[4] \texttt{get(int id)} : fetch item at position id
+\vspace{0.5in}
+\part[4] \texttt{getFirst()} : get the first element.
+\vspace{0.5in}
+\end{parts}
+
+
+\question[10]
+Suppose you had a list of words stored in a HashSet.  Write a fragment
+of Java code that would allow you to print out the words in
+alphabetical order.
+
+\end{questions}
+
+\end{document}
+
+
+% Local Variables:
+% mode: LaTeX
+% mode: Auto-Fill
+% mode: RefTeX
+% mode: Flyspell
+% End:

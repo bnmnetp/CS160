@@ -1,0 +1,116 @@
+\documentclass[11pt]{exam}
+\usepackage{listings}
+\usepackage{pdfsync}
+
+%
+%  Created by Brad Miller on 2006-03-07.
+%  Copyright (c) 2006 Luther College. All rights reserved.
+%
+%
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+\pdffalse % we are not running PDFLaTeX
+\else
+\pdfoutput=1 % we are running PDFLaTeX
+\pdftrue
+\fi
+
+\ifpdf
+\usepackage{subfigure}
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+%
+%  Update these values for running headers
+%
+\firstpageheader{\bf\Large CS-151}{\bf\Large Stacks, Queues, and Recursion}{\bf\Large
+  2006-03-10 }
+\runningheader{CS 151}{}{Exam-1}
+\addpoints
+
+\begin{document}
+
+\begin{center}
+  \fbox{\fbox{\parbox{5.5in}{\centering This Exam is being given under
+        the guidelines of the \textbf{Honor Code}. You are expected to
+        respect those guidelines and to report those who do not.
+        Answer the questions in the spaces provided. If you run out of
+        room for an answer, continue on the back of the page.  There are
+      \numquestions\  questions for a total of  \numpoints\ points.}}}
+\end{center}
+
+% setup standard options for the including code fragments
+\lstset{language=Python,numbers=left}
+
+\vspace{0.1in}
+\hbox to \textwidth{Name:\enspace\hrulefill}
+
+% Questions start here:
+\begin{questions}
+
+\question Suppose you are writing an application to keep the payroll for some company.  Your application consists of at least three classes:  \texttt{Person}, \texttt{Manager}, and \texttt{Worker}.  A \texttt{Person}  has a name and year of birth.  A \texttt{Worker} has a department and a monthly salary. A \texttt{Manager} has a department and a salary and a bonus equal to 10\% of their salary.
+
+\begin{parts}
+	\part[10] Describe the inheritance hierarchy you will use in this application.  Indicate in your description where the instance variables belong.
+	\vspace{3in}
+	\part[10] Implement the classes on your inheritance hierarchy.  In particular you should write an efficient constructor for each class, and an \verb~__str__~ method for each class, and a method that returns the total yearly compensation.
+	\vspace{5in}
+\end{parts}
+
+\newpage
+
+\question[5] Convert the following expression to its fully parenthesized form.
+$$A~-~B~*~C~/~D~+~E~+~F$$
+\vspace{1.5in}
+
+\question[5] Convert the following expression to its Postfix form.
+$$A~/~B~*~C~+~D$$
+\vspace{1.5in}
+
+\question[5] Show how the stack is used in evaluating the following postfix expression.
+$$7~13~*~12~8~-~4~+~10~*$$
+\vspace{1.5in}
+
+\question[5] Convert the following expression to prefix notation.
+$$A~*~B~/~(C~-~D)~+~(E~*~F)$$
+\vspace{1.5in}
+
+
+\question[20] For this question you must implement a \texttt{Stack} class.  However you may \textbf{not} use a list in your implementation.  You \textbf{must} use two \texttt{Queues}.  Implement the methods \verb!__init__!, \texttt{push}, \texttt{pop}, and \texttt{isempty}.
+\vspace{4.5in}
+
+\newpage
+\question Write a recursive function that finds the minimum value in a list of numbers.  The function must accept a list
+
+\begin{parts}
+\part[5]  What is the base case?
+\vspace{1in}
+\part[5] What is your `recursive step?'
+\vspace{1in}
+\part[10] Write the function \texttt{findMin(l)}
+\end{parts}
+\newpage
+
+\question[20] Given the following mystery function.  Trace the calls and show what it prints out when called as shown.
+\begin{lstlisting}[label=lst:mystery,float=htbp] %python
+
+	def mystery(s):
+	    if s == "":
+	        return [s]
+	    else:
+	        ans = []
+	        for w in mystery(s[1:]):
+	            for pos in range(len(w) +1):
+	                ans.append(w[:pos]+s[0]+w[pos:])
+	        return ans
+	mystery('top')
+\end{lstlisting}
+\vspace{5in}
+
+
+\end{questions}
+
+\end{document}

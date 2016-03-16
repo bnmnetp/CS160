@@ -1,0 +1,115 @@
+\documentclass[11pt]{exam}
+\usepackage{listings}
+\usepackage{pdfsync}
+
+%
+%  Created by Brad Miller on 2006-03-07.
+%  Copyright (c) 2006 Luther College. All rights reserved.
+%
+%
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+\pdffalse % we are not running PDFLaTeX
+\else
+\pdfoutput=1 % we are running PDFLaTeX
+\pdftrue
+\fi
+
+\ifpdf
+\usepackage{subfigure}
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+%
+%  Update these values for running headers
+%
+\firstpageheader{\bf\Large CS-151}{\bf\Large Stacks, Queues, and Recursion}{\bf\Large
+  2006-03-10 }
+\runningheader{CS 151}{}{Exam-1}
+\addpoints
+
+\begin{document}
+
+\begin{center} 
+  \fbox{\fbox{\parbox{5.5in}{\centering This Exam is being given under
+        the guidelines of the \textbf{Honor Code}. You are expected to
+        respect those guidelines and to report those who do not.
+        Answer the questions in the spaces provided. If you run out of
+        room for an answer, continue on the back of the page.  There are
+      \numquestions\  questions for a total of  \numpoints\ points.}}}
+\end{center} 
+
+% setup standard options for the including code fragments
+\lstset{language=Python,numbers=left}
+
+\vspace{0.1in} 
+\hbox to \textwidth{Name:\enspace\hrulefill} 
+
+% Questions start here:
+\begin{questions}
+
+\question[5] Convert the following expression to its fully parenthesized form. 
+$$A~-~B~*~C~/~D~+~E~+~F$$
+\vspace{1.5in}
+
+\question[5] Convert the following expression to its Postfix form.  
+$$A~/~B~*~C~+~D$$
+\vspace{1.5in}
+
+\question[5] Show how the stack is used in evaluating the following postfix expression.
+$$7~13~*~12~8~-~4~+~10~*$$
+\vspace{1.5in}
+
+\question[5] Convert the following expression to prefix notation. 
+$$A~*~B~/~(C~-~D)~+~(E~*~F)$$
+\vspace{1.5in}
+
+\question[20] For this question you must implement a Queue class.  However you may not use a list in your implementation.  You \textbf{must} use two stacks.  Implement the methods \verb!__init__!, \texttt{enqueue}, \texttt{dequeue}, and \texttt{isempty}.
+\vspace{4.5in}
+
+\newpage
+\question Write a recursive function that takes a string as a parameter and returns the reversed string as the result.  
+
+\begin{parts}
+\part[5]  What is the base case?
+\vspace{1in}
+\part[5] What is your `recursive step?'
+\vspace{1in}
+\part[10] Write the function \texttt{reverse(s)}
+\end{parts}
+\newpage
+\question Suppose you are writing a banking application.  In your application you have several different kinds of accounts.  For any kind of account you can deposit money, withdraw money, and check the balance.    Checking Accounts do not accrue any interest, give ten free transactions per month, and charge 25 cents for each transaction after the tenth.  A savings account earns interest that compounds monthly based on the balance on the last day of the month.
+
+\begin{parts}
+\part[10] Draw a picture to indicate the inheritance hierarchy you will use in this application.  Indicate on the picture where the instance variables belong.
+\vspace{3in}
+\part[10] Implement the classes on your inheritance hierarchy.  In particular you should write the constructor, and the methods needed to allow for correct deposits and withdrawals for every account.
+\vspace{5in}
+\end{parts}
+
+\newpage
+\question[20] Given the following mystery function.  Trace the calls and show what it prints out when called as shown.
+\begin{lstlisting}[label=lst:mystery,float=htbp]
+def mystery(n,A):
+    for i in range(2):
+        if n < 2:
+            A[n] = i            
+            mystery(n+1,A)
+        else:
+            A[n] = i
+            print A[0],A[1],A[2]
+B = [0,0,0]
+mystery(0,B)
+\end{lstlisting}
+\vspace{5in}
+
+
+
+
+\end{questions}
+
+\end{document}
+

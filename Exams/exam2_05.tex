@@ -1,0 +1,154 @@
+\documentclass[11pt]{exam}
+\usepackage{listings}
+\usepackage{pdfsync}
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+\pdffalse % we are not running PDFLaTeX
+\else
+\pdfoutput=1 % we are running PDFLaTeX
+\pdftrue
+\fi
+
+\ifpdf
+\usepackage{subfigure}
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+\firstpageheader{\bf\Large CS 151}{\bf\Large Exam-2}{\bf\Large
+  April 19, 2005}
+\runningheader{CS 151}{}{Exam-2}
+\addpoints
+
+\begin{document}
+\begin{center} 
+  \fbox{\fbox{\parbox{5.5in}{\centering This Exam is being given under
+        the guidelines of the \textbf{Honor Code}. You are expected to
+        respect those guidelines and to report those who do not.
+        Answer the questions in the spaces provided. If you run out of
+        room for an answer, continue on the back of the page.  There are
+      \numquestions\  questions for a total of  \numpoints\ points.}}}
+\end{center} 
+\lstset{language=Python,numbers=left}
+
+\vspace{0.1in} 
+\hbox to \textwidth{Name:\enspace\hrulefill} 
+
+
+\begin{questions}
+
+\question[5] Rank the following functions in order from slowest
+growing to fastest.
+\begin{itemize}
+\item $N$
+\item $N log(N)$
+\item 1
+\item $log(N)$
+\item $N^2$
+\end{itemize}
+
+% Trace the operation of this 
+% \question[10]  Ackermann's function (defined below) is a famous function in computer science in vented by Wilhelm Ackermann.  One of the reasons's it is famous that that it is very very time consuming to run.  For example, \lstinline{ackermann(4,4)} makes $2^{2^{2^{65535}}}$ calls!
+% \begin{lstlisting}
+% def ackermann(m,n):
+%     print m,n  
+%     if m == 0:
+%         return n + 1
+%     if n == 0:
+%         return ackermann(m-1,1)
+%     else:
+%         return ackermann(m-1, ackermann(m,n-1))
+% \end{lstlisting}
+% Trace each call and show the final result from calling: \lstinline{ackermann(1,1)}
+
+\question[10] Show each recursive call and the final result from calling the fun function as \lstinline{fun(98765)}
+\begin{lstlisting}
+def fun(n):
+    if n % 10 == n:
+        return n
+    else:
+        sum = 0
+        for i in str(n):
+            sum = sum + int(i)
+        return fun(sum)
+\end{lstlisting}
+\vspace{6in}
+
+
+% remove duplicates from a list
+\newpage
+% \question[10] 
+%   Write an 
+%   $O(n \log{n})$, or better, algorithm that will remove all duplicates from an
+%   list of $n$ integers.
+% \vspace{4.5in}
+
+
+
+\question[10] Given the following list \lstinline{L = [90, 1, 3, 8, 56, 21, 5, 13, 1, 146, 2, 34]}.  Show the contents of \lstinline{L} after the first two passes of Selection sort.
+\vspace{4.5in}
+
+
+\question[10] Given the following list 
+\lstinline{L = [11, 3, 23, 17, 9, 21, 7, 5, 1, 19, 13, 15]}.  Show the contents of \lstinline{L} after two partitions by Quicksort.  You should use the simple pivot selection method discussed in the book.  Show the first partitioning on the entire list, then show the partitioning on the lower half of the list produced by the first partition.
+\vspace{4.5in}
+
+
+\question[5]  What is the Big-O running time for the following code fragment:
+\begin{lstlisting}[language=python]
+sum = 0
+i = 1
+while i < n:
+    sum = sum + 1
+    i = i * 2
+\end{lstlisting}
+\vspace{1in}
+
+\question[5]  What is the Big-O running time for the following code fragment:
+\begin{lstlisting}[language=python]
+sum = 0
+for i in range(n):
+    sum = sum + 1
+for j in range(n):
+    for k in range(n+1):
+        for l in range(n+2)
+            sum = sum + 1
+\end{lstlisting}
+\vspace{1in}
+
+\question[15] Write a recursive function that returns \lstinline{True} if a word is a palindrome, and \lstinline{False} if the word is not a palindrome.  You may assume that the word will be in lower case and will not contain any spaces or other punctuation.  Remember a palindrome is a word that is spelled the same forward and backward.  For example 'radar' is a palindrome.
+\vspace{4.5in}
+
+\question[10] Given the following list \lstinline{L = [1, 3, 5, 7, 9, 11, 13, 17, 19]} write down each comparison that the binarySearch algorithm would do when searching for the key 7.
+\vspace{3in}
+
+\question[10] Given the following hash function and set of keys to insert show the resulting hash table assuming that you are using linear probing.  The table holds 11 keys.
+
+\begin{lstlisting}
+def hash(n,size):
+    sum = 0
+    for i in n:
+        sum = sum + ord(i)
+    return sum%size
+\end{lstlisting}
+
+Each of the one character keys to insert and their ordinal values are shown below:
+\begin{table}[h!]
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    q & u & a & d & r & l & t & i & c \\
+    113 & 117 & 97 & 100 & 114 & 108 & 116 & 105 & 99 \\
+     \end{tabular}
+	\end{center}
+
+	\label{étiquette}
+\end{table}
+\vspace{3in}
+
+
+\end{questions}
+
+\end{document}
+
