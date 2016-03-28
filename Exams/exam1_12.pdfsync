@@ -1,0 +1,8 @@
+exam1_12
+version 0
+(supp-pdf.mkii
+)
+(pdftexcmds.sty
+(ifluatex.sty
+)
+(ifpdf.sty

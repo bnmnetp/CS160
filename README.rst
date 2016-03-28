@@ -43,15 +43,19 @@ Weekly Goals
   * Inheritance
   * Discuss and start part 2 of Crazy 8's
   * More on Big-O analysis  -- Read Chapter on Analysis
-  
+
 * Week of February 29
 
   * Anagram Detection Algorithms And Big-O
   * Stacks -- Read Stacks, Queues and Lists
   * Friday - Brad is at SIGCSE in Memphis
   * Be ready to try your Player classes Monday March 7
-  
-  
 
-  
- 
+
+* Week of March 7
+
+  * Introducing the Queue
+  * Airplane boarding simulator
+  * Crazy 8's Tournament?
+  * Project 2:  Word Ladders  (Queues of Stacks!!?!)
+  * Lists and their implementation

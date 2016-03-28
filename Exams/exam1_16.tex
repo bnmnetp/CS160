@@ -1,0 +1,167 @@
+\documentclass[11pt]{exam}
+\usepackage{listings}
+\usepackage{pdfsync}
+
+%
+%  Created by Brad Miller on 2006-03-07.
+%  Copyright (c) 2006 Luther College. All rights reserved.
+%
+%
+
+\usepackage{subfigure}
+\usepackage[pdftex]{graphicx}
+
+%
+%  Update these values for running headers
+%
+\firstpageheader{\bf\Large CS-160}{\bf\Large Stacks, Queues, and Analysis}{\bf\Large
+  2016-03-15 }
+\runningheader{CS 160}{}{Exam-1}
+\addpoints
+
+\begin{document}
+
+\begin{center}
+  \fbox{\fbox{\parbox{5.5in}{\centering This Exam is being given under
+        the guidelines of the \textbf{Honor Code}. You are expected to
+        respect those guidelines and to report those who do not.
+        Answer the questions in the spaces provided. If you run out of
+        room for an answer, continue on the back of the page.  There are
+      \numquestions\  questions for a total of  \numpoints\ points.}}}
+\end{center}
+
+% setup standard options for the including code fragments
+\lstset{language=Python,numbers=left}
+
+\vspace{0.1in}
+\hbox to \textwidth{Name:\enspace\hrulefill}
+
+% Questions start here:
+\begin{questions}
+
+
+  \question[5] Rank the following Big-O classes in order from 1 to 5 where 1 is the most efficient (fastest) and 5 is the least efficient (slowest).
+
+  \begin{itemize}
+  \item $O(N)$
+  \item $O(N log(N))$
+  \item $O(1)$
+  \item $O(log(N))$
+  \item $O(N^2)$
+  \end{itemize}
+
+  \question[5]  Draw the contents of the stack after the following operations
+  \begin{verbatim}
+    myStack = Stack()
+    myStack.push(1)
+    myStack.push(2)
+    myStack.pop()
+    myStack.push(3)
+    myStack.peek()
+    myStack.push(4)
+    myStack.pop()
+  \end{verbatim}
+  \vspace{2in}
+
+\newpage
+\question[5]  given the following code, what is the output?
+
+\begin{lstlisting}
+    class Animal:
+        def __init__(self,name):
+            self._name = name
+        def speak(self):
+            print("Hello")
+        def get_name(self):
+            return "My name is {}".format(self._name)
+
+    class Dog(Animal):
+        def __init__(self,name):
+            super().__init__(name)
+            self.numLegs = 4
+
+        def speak(self):
+            print("Woof Woof")
+
+    class Cat(Animal):
+        def get_name(self):
+            return "My Cat name is {}".format(self._name)
+
+    spot = Dog("Spot")
+    boots = Cat("Felix")
+    spot.speak()
+    boots.speak()
+    print(spot.get_name())
+    print(boots.get_name())
+\end{lstlisting}
+
+
+\newpage
+\question Given the following code for a Node class and a Stack class.
+
+\begin{lstlisting}
+class Node:
+    def __init__(self,initdata):
+        self.data = initdata
+        self.next = None
+
+class Stack:
+    def __init__(self):
+        self.size = 0
+        self.top = None
+
+    def push(self,item):
+        if self.top == None:
+            self.top = Node(item)
+        else:
+            newNode = Node(item)
+            newNode.next = self.top
+            self.top = newNode
+        self.size += 1
+
+myStack = Stack()
+\end{lstlisting}
+
+\begin{parts}
+    \part[5] Draw a picture to represent the internals of the stack after calling: \verb~myStack.push(3)~, \verb~myStack.push(7)~, \verb~myStack.push(1)~ in that order.
+
+    \part[5] Write a pop method for the stack.  Make sure that you take into consideration all edge cases.
+\end{parts}
+
+  \newpage
+  question Using the following code fragment:
+  \begin{lstlisting}
+  sum = 0
+  for i in range(n):
+     for j in range(n):
+           sum = sum + 1
+  for p in range(0,n*n):
+     for q in range(p):
+        sum = sum - 1
+  sum = sum + 10
+  sum = sum + n
+  sum = sum - 10 * n
+  \end{lstlisting}
+  \begin{parts}
+    \part[2] Using Big-O notation, What is the worst case performance
+     for  lines 2--4?
+     \vspace{0.5in}
+    \part[2] Using Big-O notation, What is the worst case performance
+     for lines 5--7?
+     \vspace{0.5in}
+    \part[2] Using Big-O notation, What is the worst case performance
+     for the lines 8--10?
+     \vspace{0.5in}
+    \part[2] Using Big-O notation, What is the overall worst case performance?
+     \vspace{0.5in}
+  \end{parts}
+
+\newpage
+\question[10]  A Palindrome is a word that is spelled the same both forward and backward.  For example, 'radar' is a palendrome, as is the phrase 'a toyatas a toyota'.   Write a function that that takes a word or phrase (with the spaces removed) and returns True if the word is a palendrome and False otherwise.  A Stack must be an integral part of your solution which will be $O(n)$.
+
+\newpage
+\question[10] Implement a Queue using \textbf{two Stacks}.  Implement the methods \verb~__init__~, \verb~enqueue~, \verb~dequeue~, and \verb~size~.
+
+\end{questions}
+
+\end{document}

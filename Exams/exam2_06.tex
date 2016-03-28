@@ -1,0 +1,128 @@
+\documentclass[11pt]{exam}
+\usepackage{listings}
+\usepackage{pdfsync}
+
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+\pdffalse % we are not running PDFLaTeX
+\else
+\pdfoutput=1 % we are running PDFLaTeX
+\pdftrue
+\fi
+
+\ifpdf
+\usepackage{subfigure}
+\usepackage[pdftex]{graphicx}
+\else
+\usepackage{graphicx}
+\fi
+
+\firstpageheader{\bf\Large CS 151}{\bf\Large Exam-2}{\bf\Large
+  April 5, 2006}
+\runningheader{CS 151}{}{Exam-2}
+\addpoints
+
+\begin{document}
+\begin{center} 
+  \fbox{\fbox{\parbox{5.5in}{\centering This Exam is being given under
+        the guidelines of the \textbf{Honor Code}. You are expected to
+        respect those guidelines and to report those who do not.
+        Answer the questions in the spaces provided. If you run out of
+        room for an answer, continue on the back of the page.  There are
+      \numquestions\  questions for a total of  \numpoints\ points.}}}
+\end{center} 
+\lstset{language=Python,numbers=left}
+
+\vspace{0.1in} 
+\hbox to \textwidth{Name:\enspace\hrulefill} 
+
+
+\begin{questions}
+
+\question[5] Rank the following functions in order from slowest
+growing to fastest.
+\begin{itemize}
+\item $N$
+\item $N log(N)$
+\item 1
+\item $log(N)$
+\item $N^2$
+\end{itemize}
+
+
+
+\question[10] Given the following list \lstinline{L = [2, 4, 8, 10, 12, 14, 16, 18, 20, 22]} write down each comparison that the binarySearch algorithm would do when searching for the key 10.
+\vspace{3in}
+
+
+% remove duplicates from a list
+\newpage
+\question[10] 
+Write an $O(n \log{n})$, or better, algorithm that will remove all duplicates from a list of $n$ integers.  Call your function remDupes.  The function should take a list as a parameter and return new list without the duplicates.  The old list should have the duplicates removed.  The order of the items in the list is not important.  For example:
+\begin{verbatim}
+    x = [1, 7, 9, 2, 14, 2, 7, 21]
+    y = remDupes(x)
+    print y
+    [1, 2, 7, 9, 14, 21]
+\end{verbatim}
+\vspace{4.5in}
+
+
+
+\newpage
+\question[10] Given the following list \lstinline{L = [90, 1, 3, 8, 56, 21, 5, 13, 1, 146, 2, 34]}.  Show the contents of \lstinline{L} after the first three passes of Insertion sort.
+\vspace{4.5in}
+
+
+
+\question[5]  What is the Big-O running time for the following code fragment:
+\begin{lstlisting}[language=python]
+sum = 0
+i = 1
+while i < n:
+    sum = sum + 1
+    i = i * 2
+\end{lstlisting}
+\vspace{1in}
+
+\newpage
+\question[10] Given the following list \lstinline{L = [90, 1, 3, 8, 56, 21, 5, 13, 1, 146, 2, 34]}.  Show the contents of \lstinline{L} after the After all the swapping is done for a gap size of 3 using Shell sort.
+\vspace{4.5in}
+
+
+\question[5]  What is the Big-O running time for the following code fragment:
+\begin{lstlisting}[language=python]
+sum = 0
+for i in range(n):
+    sum = sum + 1
+for j in range(n):
+    for k in range(n+1):
+        for l in range(n+2)
+            sum = sum + 1
+\end{lstlisting}
+\vspace{1in}
+
+\newpage
+\question[10] Given the following list 
+\lstinline{L = [11, 3, 23, 17, 9, 21, 7, 5, 1, 19, 13, 15]}.  Show the contents of \lstinline{L} after two partitions by Quicksort.  You should use the median of three selection method discussed in class.  Show the first partitioning on the entire list, then show the partitioning on the lower half of the list produced by the first partition.
+\vspace{4.5in}
+
+
+\newpage
+\question[10] Given the following set of hash keys show the resulting hash table assuming that you are using linear probing.  Insert them in order from left to right.  The table holds exactly 11 keys.  You do not need to worry about growing the table.
+
+\begin{table}[h!]
+	\begin{center}
+	\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+    113 & 117 & 97 & 100 & 114 & 108 & 116 & 105 & 99 \\
+     \end{tabular}
+	\end{center}
+	\label{htab}
+\end{table}
+\vspace{3in}
+
+
+\end{questions}
+
+\end{document}
+
