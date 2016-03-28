@@ -72,3 +72,10 @@ Weekly Goals
     * Queues
     * Stacks
     * Linked lists
+
+
+* Week of March 28
+
+    * Compare Python implementation of lists with our linked lists
+    * Recursion - Read Recursion through the Three Laws section
+    * Recursive Trees
