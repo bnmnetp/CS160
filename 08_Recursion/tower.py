@@ -17,7 +17,7 @@ stretched to rectangles by shapesize()
        To exit press space bar
  ---------------------------------------
 """
-from turtle import onkey, clear, write, ht, penup, goto, bye,  listen, mainloop, Turtle
+from turtle import onkey, clear, write, hideturtle, penup, goto, bye,  listen, mainloop, Turtle
 
 class Disc(Turtle):
     def __init__(self, n):
@@ -41,11 +41,11 @@ class Tower(list):
         d.sety(150)
         return d
 
-def hanoi(n, from_, with_, to_):
+def hanoi(n, fromTower, usingTower, toTower):
     if n > 0:
-        hanoi(n-1, from_, to_, with_)
-        to_.push(from_.pop())
-        hanoi(n-1, with_, from_, to_)
+        hanoi(n - 1, fromTower, toTower, usingTower)
+        toTower.push(fromTower.pop())
+        hanoi(n - 1, usingTower, fromTower, toTower)
 
 def play():
     onkey(bye,"space")
@@ -56,7 +56,7 @@ def play():
 
 def main():
     global t1, t2, t3
-    ht(); penup(); goto(0, -225)   # writer turtle
+    hideturtle(); penup(); goto(0, -225)   # writer turtle
     t1 = Tower(-250)
     t2 = Tower(0)
     t3 = Tower(250)
