@@ -79,3 +79,11 @@ Weekly Goals
     * Compare Python implementation of lists with our linked lists
     * Recursion - Read Recursion through the Three Laws section
     * Recursive Trees
+
+
+* Week of April 4
+
+    * The end of the world, with towers of Hanoi
+    * State Space Problems and recursion
+    * Start the water jug project - Due April 13
+    * Searching algorithms
