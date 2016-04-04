@@ -41,16 +41,19 @@ class Tower(list):
         d.sety(150)
         return d
 
-def hanoi(n, fromTower, usingTower, toTower):
+def moveTower(fromTower, toTower):
+    toTower.push(fromTower.pop())
+
+def hanoi(n, fromTower, toTower, usingTower):
     if n > 0:
-        hanoi(n - 1, fromTower, toTower, usingTower)
-        toTower.push(fromTower.pop())
-        hanoi(n - 1, usingTower, fromTower, toTower)
+        hanoi(n - 1, fromTower, usingTower, toTower)
+        moveTower(fromTower, toTower)
+        hanoi(n - 1, usingTower, toTower, fromTower)
 
 def play():
     onkey(bye,"space")
     clear()
-    hanoi(6, t1, t2, t3)
+    hanoi(6, t1, t3, t2)
     write("press space bar to exit",
               align="center", font=("Courier", 16, "bold"))
 
