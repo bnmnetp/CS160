@@ -25,3 +25,19 @@ print(recsum(list(range(20))))
 
 print(ispal("radar"))
 print(ispal("foobar"))
+
+import functools
+# @functools.lru_cache()
+
+def fib(n):
+    global calls
+    calls += 1
+    if n <= 2:
+        return 1
+    else:
+        return fib(n-1) + fib(n-2)
+
+
+for i in range(1,100):
+    calls = 0
+    print(i,fib(i),calls)
