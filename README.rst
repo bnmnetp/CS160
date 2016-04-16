@@ -85,5 +85,5 @@ Weekly Goals
 
     * The end of the world, with towers of Hanoi
     * State Space Problems and recursion
-    * Start the water jug project - Due April 13
+    * Start the `water jug project <https://github.com/bnmnetp/CS160/blob/master/08_Recursion/waterjug.rst>`_ - Due April 13
     * Searching algorithms
