@@ -87,3 +87,16 @@ Weekly Goals
     * State Space Problems and recursion
     * Start the `water jug project <https://github.com/bnmnetp/CS160/blob/master/08_Recursion/waterjug.rst>`_ - Due April 13
     * Searching algorithms
+
+* Week of April 11
+
+    * Hash Functions and making hash tables
+    * Sorting
+    * You are responsible for the entire sorting and searching chapter
+
+* Week of April 18
+
+    * Finish sorting
+    * Introduction to Trees   -- Read the sections on tree representations
+    * Compression with Trees
+    * Guest lecture on Wednesday
