@@ -4,9 +4,9 @@ from heapq import heapify, heappop, heappush
 
 class QueueableBinaryTree(BinaryTree):
 
-    def __init__(self,freqdata):
-        super().__init__(freqdata[1])
-        self.value = freqdata[0]
+    def __init__(self, priority, value):
+        super().__init__(priority)
+        self.value = value
 
     def __lt__(self, other):
         if self.key < other.key:
@@ -14,7 +14,7 @@ class QueueableBinaryTree(BinaryTree):
         return False
 
 
-treequeue = [QueueableBinaryTree(x) for x in allCharacters.items()]
+treequeue = [QueueableBinaryTree(x[1],x[0]) for x in allCharacters.items()]
 heapify(treequeue)
 
 
@@ -38,7 +38,7 @@ def buildHuffmanCode(pq):
         a = heappop(pq)
         b = heappop(pq)
         newkey = a.key + b.key
-        t = QueueableBinaryTree(('internal',newkey))
+        t = QueueableBinaryTree(newkey,'internal')
         t.insertLeft(a)
         t.insertRight(b)
         heappush(pq,t)
