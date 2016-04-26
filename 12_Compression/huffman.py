@@ -1,4 +1,4 @@
-from binaryTree import BinaryTree
+from pythonds import BinaryTree
 from freqtable import allCharacters
 from heapq import heapify, heappop, heappush
 
