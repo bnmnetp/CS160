@@ -69,3 +69,24 @@ with open('pg36.txt','r') as f:
         bits += len(huffmanTable[ch])
 
 print("Bytes = {}".format(bits/8))
+
+
+def compressFile(fname, table):
+    with open(fname,'r') as sourceFile:
+        text = sourceFile.read()
+
+    res = ""
+    for ch in text:
+        res += table[ch]
+
+    final = bytearray()
+    for i in range(0,len(res),8):
+        octet = res[i:i+8]
+        final.append(int(octet,base=2))
+
+    with open(fname+'.huf','wb') as f:
+        f.write(final)
+
+compressFile('pg36.txt',huffmanTable)
+
+#format(x, '08b') converts integer x into a 8 bit binary string including leading zeros
