@@ -46,7 +46,7 @@ As usual, you should work on this in stages.
 
 1.  Get your tree built properly.  You can use either the list of lists representation or the nodes and references representation and the corresponding code from the book.
 
-2.  Then get the decode method working.  This one is easier than the encode method, and will be very easy to write if your tree is built correctly.
+2.  Then get the decode method working.  This one is easier than the encode method, and will be very easy to write if your tree is built correctly.  You will find this one easy if you use a recursive helper function to decode each character of the full string.
 
 3.  Finally write the encode method.  Lots of things with trees can be done recursively so this is really good practice.
 
