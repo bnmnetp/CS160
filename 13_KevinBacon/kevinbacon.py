@@ -1,6 +1,6 @@
 from pythonds import Graph, Queue
 import sys
-from itertools import groupby
+from itertools import groupby, permutations
 
 baconGraph = Graph()
 
@@ -25,10 +25,9 @@ with open('movie_actors.csv') as cast:
     groups = groupby(cast, key=lambda x: x.strip().split('|')[0])
     for movie, group in groups:
         actors = [x.strip().split('|')[1] for x in group]
-        for i in actors:
-            for j in actors:
-                if i != j:
-                    baconGraph.addEdge(i,j,movie)
+        for p in permutations(actors,2):
+            baconGraph.addEdge(*p,movie)
+
 
 kevin = baconGraph.getVertex('Kevin Bacon')
 for n in kevin.connectedTo:
