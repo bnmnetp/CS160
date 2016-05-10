@@ -100,3 +100,23 @@ Weekly Goals
     * Introduction to Trees   -- Read the sections on tree representations
     * Compression with Trees
     * Guest lecture on Wednesday
+
+* Week of April 25
+
+    * Tree Traversals
+    * Finish up compression example
+    * Binary Search Trees, add nodes
+
+
+* Week of May 2
+
+    * Binary Search Trees, deleting a node
+    * Introduction to Graphs and Graph representations
+    * Friday is Research Symposium Day
+
+* Week of May 9
+
+    * Breadth First Search
+    * Depth First Search
+    * Dijkstra's Algorithm
+    * Review
