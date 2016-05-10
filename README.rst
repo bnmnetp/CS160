@@ -59,3 +59,64 @@ Weekly Goals
   * Crazy 8's Tournament?
   * Project 2:  Word Ladders  (Queues of Stacks!!?!)
   * Lists and their implementation
+
+* Week of March 14
+
+  * Finish linked list implementation
+  * Compare our implementation with Python's implementation
+  * Wednesday exam
+
+    * Chapters 1 - 3
+    * Classes - implementing a simple class
+    * Big O notation and algorithm analysis
+    * Queues
+    * Stacks
+    * Linked lists
+
+
+* Week of March 28
+
+    * Compare Python implementation of lists with our linked lists
+    * Recursion - Read Recursion through the Three Laws section
+    * Recursive Trees
+
+
+* Week of April 4
+
+    * The end of the world, with towers of Hanoi
+    * State Space Problems and recursion
+    * Start the `water jug project <https://github.com/bnmnetp/CS160/blob/master/08_Recursion/waterjug.rst>`_ - Due April 13
+    * Searching algorithms
+
+* Week of April 11
+
+    * Hash Functions and making hash tables
+    * Sorting
+    * You are responsible for the entire sorting and searching chapter
+
+* Week of April 18
+
+    * Finish sorting
+    * Introduction to Trees   -- Read the sections on tree representations
+    * Compression with Trees
+    * Guest lecture on Wednesday
+
+* Week of April 25
+
+    * Tree Traversals
+    * Finish up compression example
+    * Binary Search Trees, add nodes
+
+
+* Week of May 2
+
+    * Binary Search Trees, deleting a node
+    * Introduction to Graphs and Graph representations
+    * Friday is Research Symposium Day
+
+* Week of May 9
+
+    * Breadth First Search
+    * Depth First Search
+    * Dijkstra's Algorithm
+    * Review
