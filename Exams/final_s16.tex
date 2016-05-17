@@ -73,15 +73,18 @@
 \question[10] Given the following list \lstinline{L = [1, 3, 5, 7, 9, 11, 13, 17, 19, 23]} write down each comparison that the \texttt{binarySearch} algorithm would do when searching for the key 7.
 \vspace{4in}
 
-\question[10]
+\question
 A palindrome is a string that reads the same both forward and
 backward. We can ignore punctuation marks and white space. Palindromes have been
  around since biblical times. For example, when Adam and Eve first met Adam is quoted as saying ``madam I'm adam''. Later in history a large engineering feat in central america was described as:
 ``a man a plan a canal panama''. When the use of electricty became widespread,
-engineers were often heard muttering ``so many dynamos''.   More simply, ``abcba'' is a palindrome.  Write a recursive
-function \texttt{pal(s)} to dermine whether a given string is a
-palindrome. For example: \texttt{pal(palprep("radar"))}
-would return true, whereas \texttt{pal("palindrome")} would return false. \textit{Hint: a zero or one character string is always a palindrome, a two character string is a palindrom if the two characters are the same... And, don't forget how to slice}
+engineers were often heard muttering ``so many dynamos''.   More simply, ``abcba'' is a palindrome.
+\begin{parts}
+  \part[3] Identify the base case(s) for writing \texttt{pal} as a recursive function.
+  \vspace{1in}
+  \part[7] Write a recursive function \texttt{pal(s)} to dermine whether a given string is a palindrome. For example: \texttt{pal("radar")}
+would return true, whereas \texttt{pal("palindrome")} would return false.
+\end{parts}
 
 \newpage
 \question Given the following list of numbers \lstinline{x = [13, 24, 5, 7, 9, 17, 32, 27, 2]}
@@ -90,15 +93,46 @@ would return true, whereas \texttt{pal("palindrome")} would return false. \texti
 \part[10]  Create a binary search tree and insert each of the numbers.  Draw a picture of the final tree.  You do not need to show all the intermediate trees, just the final.
 \vspace{3in}
 
-\part[10]  Create a binary min-heap and insert the numbers one at a time into the heap. Draw both the tree and list representation of the heap after all the numbers are inserted.
-\vspace{3in}
 
 \part[5] Show the new binary search tree after you have deleted the nodes 7, 24, and 13.
 \vspace{3in}
+\end{parts}
 
-\part[5] Show the new heap after you have called the delMin (dequeue) method 2 times.
+
+\newpage
+\question Given the following list of numbers \lstinline{x = [13, 24, 5, 7, 9, 17, 32, 27, 2]}
+\begin{parts}
+\part[10]  Create a binary min-heap and insert the numbers one at a time into the heap. Draw both the tree and list representation of the heap after all the numbers are inserted.
+\vspace{3in}
+
+\part[5] Draw the new heap after you have called the delMin (dequeue) method 2 times.  No need to show the list representation for this part.
+\vspace{3in}
 
 \end{parts}
+
+\newpage
+\question Given the following directed graph:
+\begin{figure}[h!t]
+        \begin{center}
+        \includegraphics[scale=.65]{dfs}
+    \end{center}
+\end{figure}
+
+\begin{parts}
+\part[10] Perform a depth first search on the graph using node a as the starting vertex. When iterating over neighbors iterate in alphabetical order.  Draw the predecessor links, and add the distance values to the graph.
+
+\part[10] Draw the adjacency matrix representation of the graph.
+\vspace{2.0in}
+
+\part[10] Perform a breadth first search on the graph using node a as the starting vertex. When iterating over neighbors iterate in alphabetical order. Draw the predecessor links and add the distance values to the graph.
+\begin{figure}[h!t]
+        \begin{center}
+        \includegraphics[scale=.65]{dfs}
+    \end{center}
+\end{figure}
+
+\end{parts}
+
 
 \newpage
 \question[10] Given the following set of hash keys show the resulting hash table assuming that you are using linear probing.  Insert them in order from left to right.  The table holds exactly 11 keys.  You do not need to worry about growing the table.
@@ -149,15 +183,6 @@ would return true, whereas \texttt{pal("palindrome")} would return false. \texti
 \newpage
 
 % \newpage
-\question[10] Given the following directed graph, draw the adjacency matrix representation of the graph.  You can assume that the weights for all the links are 1.
-\begin{figure}[h!t]
-        \begin{center}
-        \includegraphics[scale=.75]{dfs}
-    \end{center}
-\end{figure}
-
-
-\question[10] Perform a depth first search on the graph starting using node a as the starting vertex.  Draw the predecessor links, and add the distance values to the graph.
 
 \end{questions}
 
