@@ -145,50 +145,8 @@ would return true, whereas \texttt{pal("palindrome")} would return false. \texti
 \end{parts}
 
 \newpage
-\question
-Yertlenet is a primitive form of networking that was used at Luther college up until the mid 1980's.  Yertlenet uses turtles as a message transport mechanism and requires that special one-way channels be dug between the buildings on campus to facilitate turtle navigation. A Message is routed from building $x$ to building $y$ by placing a message on the back of a turtle and setting the turtle in the channel leading to the next building.  To facilitate routing, each building employed a student worker to receive incoming messages and if necessary move the turtle to the channel leading to the next building.
-
-You have just been hired as the new student worker for building one. Being a CS student you decide that you want to be the best turtle router on campus and therefore will create a graph of Yertlenet and figure out the optimum routing for messages that come through your building. The following table shows the information describing the Yertlenet connections. Column one is the start building, column two is the end building, and column three is the cost of the link.
-
-\begin{verbatim}
-1 2 10
-1 3 15
-1 6 5
-2 3 2
-3 4 7
-3 6 10
-4 5 7
-6 4 5
-5 6 13
-\end{verbatim}
-
-\begin{parts}
-\part[5]
-Draw the directed graph represented by the above table.
-
-\part[12]
-Using Dijkstras algorithm, find the shortest path from each other building on campus to yours.  Fill in the table below when you are done.  You do not need to show every step of the algorithm, but make sure you show changes to the priority queue.
-
-\includegraphics[scale=0.9]{dijkstra_table}
-\end{parts}
-
-
 
 \newpage
-\question  Consider the following classic problem:  There are three missionaries and three cannibals on the left bank of a river.  They wish to cross over to the right bank using a boat that can only carry two at a time.  Either a missionary or a cannibal can row the boat.  However, the number of cannibals on either bank must never exceed the number of missionaries or the missionaries are toast.
-
-This problem can be solved using a graph search algorithm.  The key is to recognize that the nodes in the graph represent a ``configuration'' of the problem, with certain things on one side of the river and certain things on the other.  Edges between nodes represent legal movements of items from one side to the other.   The following diagram illustrates the starting space for this problem with the boat and all missionaries and cannibals on the left side of the river.
-
-\includegraphics[scale=.5]{Missionaries}
-
-
-\begin{parts}
-    \part[10]  Draw a graph to show all the legal states that could come right after the start state.  Then pick one of those states and show the next set of legal states.
-    \vspace{4.0in}
-
-    \part[2]  Which Graph algorithm would you use to find the smallest number of crossings?
-\end{parts}
-\vspace{8in}
 
 % \newpage
 \question[10] Given the following directed graph, draw the adjacency matrix representation of the graph.  You can assume that the weights for all the links are 1.
@@ -198,6 +156,10 @@ This problem can be solved using a graph search algorithm.  The key is to recogn
     \end{center}
 \end{figure}
 
+
+\question[10] Perform a depth first search on the graph starting using node a as the starting vertex.  Draw the predecessor links, and add the distance values to the graph.
+
 \end{questions}
+
 
 \end{document}
