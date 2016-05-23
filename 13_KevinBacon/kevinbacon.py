@@ -1,7 +1,9 @@
 from pythonds import Graph, Queue
 import sys
 from itertools import groupby, permutations
+from time import time
 
+start = time()
 baconGraph = Graph()
 
 # with open('movie_actors.csv') as cast:
@@ -21,17 +23,20 @@ baconGraph = Graph()
 
 # this is kind of a cool way to do this with the itertools.groupby function.
 
+def rowiter(f):
+    for line in f:
+        yield line.strip().split('|')
+
 with open('movie_actors.csv') as cast:
-    groups = groupby(cast, key=lambda x: x.strip().split('|')[0])
+    groups = groupby(rowiter(cast), key=lambda x: x[0])
     for movie, group in groups:
-        actors = [x.strip().split('|')[1] for x in group]
+        actors = [x[1] for x in group]
         for p in permutations(actors,2):
             baconGraph.addEdge(*p,movie)
-
+end = time()
+print("time to build the graph = {}".format(end-start))
 
 kevin = baconGraph.getVertex('Kevin Bacon')
-for n in kevin.connectedTo:
-    print(n)
 
 def bfs(g,start):
   start.setDistance(0)
