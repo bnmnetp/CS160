@@ -24,12 +24,13 @@ def scoreString(test_string, goal_string):
     '''
         zip together the test_string and goal_string then iterate over the pairs,
         calculate the percentage that are the same.
+        list(map(lambda x,y: x == y, 'abc', 'aBc'))
     '''
     same = 0
     for c1,c2 in zip(goal_string,test_string):
         if c1 == c2:
             same = same + 1
-    score = float(same) / len(goal_string)
+    score = same / len(goal_string)
     return score*100
 
 
