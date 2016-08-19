@@ -13,7 +13,7 @@ Weekly Goals
 ------------
 
 * Week of August 31
-
+  * Python Review -- Shakespear and his Monkeys
   * Write a new MSDie class which can represent more than numbers on each side.  *Hint:* The constructor should take a list of values as a parameter.
   * A pythonic way of protecting data ``properties``
   * Add a Cup Class that can roll multiple dice.
