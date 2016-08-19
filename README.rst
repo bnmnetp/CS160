@@ -12,10 +12,10 @@ Setting up Your Environment
 Weekly Goals
 ------------
 
-* Week of February 7
+* Week of August 31
 
-  * A pythonic way of protecting data ``properties``
   * Write a new MSDie class which can represent more than numbers on each side.  *Hint:* The constructor should take a list of values as a parameter.
+  * A pythonic way of protecting data ``properties``
   * Add a Cup Class that can roll multiple dice.
   * Algorithms for Random Numbers
 
@@ -25,13 +25,12 @@ Weekly Goals
 
   * What makes for a good pseudorandom number generator?
 
-* Week of February 14
+* Week of Sept 5
 
   * Discussion and finishing up Random lab -- Hand in on Wednesday
-  * Crazy 8's Project  -- Card, Deck, Hand, and Player classes
   * Introduce Algorithm Analysis ideas
 
-* Week of February 20
+* Week of
 
   * Questions on part 1 of the crazy 8 assignment
 
@@ -44,7 +43,7 @@ Weekly Goals
   * Discuss and start part 2 of Crazy 8's
   * More on Big-O analysis  -- Read Chapter on Analysis
 
-* Week of February 29
+* Week of
 
   * Anagram Detection Algorithms And Big-O
   * Stacks -- Read Stacks, Queues and Lists
@@ -52,7 +51,7 @@ Weekly Goals
   * Be ready to try your Player classes Monday March 7
 
 
-* Week of March 7
+* Week of
 
   * Introducing the Queue
   * Airplane boarding simulator
@@ -60,7 +59,7 @@ Weekly Goals
   * Project 2:  Word Ladders  (Queues of Stacks!!?!)
   * Lists and their implementation
 
-* Week of March 14
+* Week of
 
   * Finish linked list implementation
   * Compare our implementation with Python's implementation
@@ -74,47 +73,47 @@ Weekly Goals
     * Linked lists
 
 
-* Week of March 28
+* Week of
 
     * Compare Python implementation of lists with our linked lists
     * Recursion - Read Recursion through the Three Laws section
     * Recursive Trees
 
 
-* Week of April 4
+* Week of
 
     * The end of the world, with towers of Hanoi
     * State Space Problems and recursion
-    * Start the `water jug project <https://github.com/bnmnetp/CS160/blob/master/08_Recursion/waterjug.rst>`_ - Due April 13
+    * Start the `water jug project <https://github.com/bnmnetp/CS160/blob/master/08_Recursion/waterjug.rst>`_ - Due
     * Searching algorithms
 
-* Week of April 11
+* Week of
 
     * Hash Functions and making hash tables
     * Sorting
     * You are responsible for the entire sorting and searching chapter
 
-* Week of April 18
+* Week of
 
     * Finish sorting
     * Introduction to Trees   -- Read the sections on tree representations
     * Compression with Trees
     * Guest lecture on Wednesday
 
-* Week of April 25
+* Week of
 
     * Tree Traversals
     * Finish up compression example
     * Binary Search Trees, add nodes
 
 
-* Week of May 2
+* Week of
 
     * Binary Search Trees, deleting a node
     * Introduction to Graphs and Graph representations
     * Friday is Research Symposium Day
 
-* Week of May 9
+* Week of
 
     * Breadth First Search
     * Depth First Search
