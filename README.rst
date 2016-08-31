@@ -6,13 +6,14 @@ Setting up Your Environment
 ---------------------------
 
 * Since we are in Olin 112 please bring  your laptops to class
-* Make sure you register for cs160spring16 at http://interactivepython.org
+* Make sure you register for cs160fall16 at http://interactivepython.org
 * Download and install the latest `PyCharm <https://www.jetbrains.com/pycharm/download/>`_ on your computer
 
 Weekly Goals
 ------------
 
 * Week of August 31
+
   * Python Review -- Shakespear and his Monkeys
   * Write a new MSDie class which can represent more than numbers on each side.  *Hint:* The constructor should take a list of values as a parameter.
   * A pythonic way of protecting data ``properties``
