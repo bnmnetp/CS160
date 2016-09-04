@@ -26,6 +26,10 @@ Weekly Goals
 
   * What makes for a good pseudorandom number generator?
 
+  * Assignment:  Do practice1 for Friday
+  * Assignment:  Do practice2 for Monday
+
+
 * Week of Sept 5
 
   * Discussion and finishing up Random lab -- Hand in on Wednesday
