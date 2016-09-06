@@ -5,7 +5,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>practice3 &#8212; Runestone Interactive Overview</title>
+    <title>practice3 &mdash; Runestone Interactive Overview</title>
     
     <link rel="stylesheet" href="_static/basic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -25,7 +25,6 @@
     <link rel="stylesheet" href="_static/poll.css" type="text/css" />
     <link rel="stylesheet" href="_static/tabbedstuff.css" type="text/css" />
     <link rel="stylesheet" href="_static/video.css" type="text/css" />
-    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootswatch/2.3.1/""/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/jquery-ui-1.10.3.custom.min.css" type="text/css" />
     <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
     <link rel="stylesheet" href="_static/user-highlights.css" type="text/css" />
@@ -348,6 +347,7 @@ from unittest.gui import TestCaseGui
 class MyTests(TestCaseGui):
     def test_account(self):
         self.assertEqual(sqlist, [0, 1, 4, 9, 16, 25, 36, 49, 64, 81])
+        self.assertLess(self.getEditorText().count('\n'), 3, "your solution should be one line")
 
 MyTests().main()
 </textarea>
@@ -363,13 +363,14 @@ from unittest.gui import TestCaseGui
 class MyTests(TestCaseGui):
     def test_account(self):
         self.assertEqual(oddnums, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23])
+        self.assertLess(self.getEditorText().count('\n'), 3, "your solution should be one line")
 
 MyTests().main()
 </textarea>
 </div>
 
 <div data-childcomponent="lcomppract3" class="explainer ac_section alert alert-warning">
-Using a single line of code and a list comprehension make a list of all the letters in the sentence &#8220;the quick brown fox jumps over the lazy dog&#8221; that are not vowels (a,e,i,o,u)
+Using a single line of code and a list comprehension make a list of every letter in the sentence &#8220;the quick brown fox jumps over the lazy dog&#8221; that are not vowels (a,e,i,o,u)
 <textarea data-component="activecode" id=lcomppract3 data-lang="python"    data-timelimit=25000  data-codelens="true" data-audio=''     >
 notvowels = ["your code here"]
 ====
@@ -378,6 +379,7 @@ from unittest.gui import TestCaseGui
 class MyTests(TestCaseGui):
     def test_account(self):
         self.assertEqual(notvowels, [x for x in "the quick brown fox jumps over the lazy dog" if x not in "aeiou"])
+        self.assertLess(self.getEditorText().count('\n'), 3, "your solution should be one line")
 
 MyTests().main()
 </textarea>
@@ -405,7 +407,7 @@ MyTests().main()
     </p>
     <p>
         &copy; Copyright 2015 millbr02.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.6.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.4.5.
     </p>
   </div>
 </footer>

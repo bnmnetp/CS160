@@ -59,7 +59,7 @@ practice defining and testing your own class
     class MyTests(TestCaseGui):
         def test_account(self):
             self.assertEqual(sqlist, [0, 1, 4, 9, 16, 25, 36, 49, 64, 81])
-            self.assertLess(len(self.getEditorText), 3)
+            self.assertLess(self.getEditorText().count('\n'), 3, "your solution should be one line")
 
     MyTests().main()
 
@@ -75,7 +75,7 @@ practice defining and testing your own class
     class MyTests(TestCaseGui):
         def test_account(self):
             self.assertEqual(oddnums, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23])
-            self.assertLess(len(self.getEditorText), 3)
+            self.assertLess(self.getEditorText().count('\n'), 3, "your solution should be one line")
 
     MyTests().main()
 
@@ -92,6 +92,6 @@ practice defining and testing your own class
     class MyTests(TestCaseGui):
         def test_account(self):
             self.assertEqual(notvowels, [x for x in "the quick brown fox jumps over the lazy dog" if x not in "aeiou"])
-            self.assertLess(len(self.getEditorText), 3)
+            self.assertLess(self.getEditorText().count('\n'), 3, "your solution should be one line")
 
     MyTests().main()
