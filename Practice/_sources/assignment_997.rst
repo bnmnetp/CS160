@@ -1,0 +1,97 @@
+practice3
+=========
+
+**Points**: 5
+
+**Due**: 2016-09-09 14:00:00
+
+practice defining and testing your own class
+
+
+.. activecode:: acctclass1
+   :language: python
+
+   Create a class called ``Account``  The class should have the following methods:
+
+   * ``__init__(initial_balance)``
+   * ``get_balance()``  returns the current balance on the account
+   * ``withdrawal(amt)`` removes ``amt`` dollars from the account
+   * ``deposit(amt)`` adds ``amt`` dollars to the account
+
+   Your withdrawal method should not allow a withdrawal that would create a negative balance in the account.
+   For now just print an error message, we'll talk about a better way later.
+   ~~~~
+   class Account:
+       pass
+   ====
+   from unittest.gui import TestCaseGui
+
+   class MyTests(TestCaseGui):
+       def test_account(self):
+           b = Account(10)
+           self.assertEqual(b.get_balance(),10, "initial balance check of $10")
+           b.deposit(10)
+           self.assertEqual(b.get_balance(),20, "I just deposited $10")
+           b.withdrawal(5)
+           self.assertEqual(b.get_balance(),15, "I just took out $5")
+           b.withdrawal(5)
+           self.assertEqual(b.get_balance(),10, "I just took out $5")
+           for i in range(9):
+               b.deposit(10)
+           self.assertEqual(b.get_balance(), 100, "I just made 9 deposits of $10")
+           b.withdrawal(300)
+           self.assertEqual(b.get_balance(), 100, "withdrawing 300 would make you overdrawn")
+           b.withdrawal(100)
+           self.assertEqual(b.get_balance(), 0, "A $0 balance is OK")
+
+   MyTests().main()
+
+
+.. activecode:: lcomppract1
+    :language: python
+
+    Using a single line of code and a list comprehension make a list of of the square numbers from 0 through 81.
+    ~~~~
+    sqlist = ["your code here"]
+    ====
+    from unittest.gui import TestCaseGui
+
+    class MyTests(TestCaseGui):
+        def test_account(self):
+            self.assertEqual(sqlist, [0, 1, 4, 9, 16, 25, 36, 49, 64, 81])
+            self.assertLess(len(self.getEditorText), 3)
+
+    MyTests().main()
+
+.. activecode:: lcomppract2
+    :language: python
+
+    Using a single line of code and a list comprehension make a list of the odd integers less than 25
+    ~~~~
+    oddnums = ["your code here"]
+    ====
+    from unittest.gui import TestCaseGui
+
+    class MyTests(TestCaseGui):
+        def test_account(self):
+            self.assertEqual(oddnums, [1, 3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23])
+            self.assertLess(len(self.getEditorText), 3)
+
+    MyTests().main()
+
+
+.. activecode:: lcomppract3
+    :language: python
+
+    Using a single line of code and a list comprehension make a list of every letter in the sentence "the quick brown fox jumps over the lazy dog" that are not vowels (a,e,i,o,u)
+    ~~~~
+    notvowels = ["your code here"]
+    ====
+    from unittest.gui import TestCaseGui
+
+    class MyTests(TestCaseGui):
+        def test_account(self):
+            self.assertEqual(notvowels, [x for x in "the quick brown fox jumps over the lazy dog" if x not in "aeiou"])
+            self.assertLess(len(self.getEditorText), 3)
+
+    MyTests().main()
