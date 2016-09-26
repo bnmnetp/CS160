@@ -133,7 +133,7 @@ The Pile class is used mainly for the discard pile, when first created a pile ha
 The Hand class is similar to Pile, but it should allow you to remove any card from the hand rather than just the card on the top of the pile.
 
 * `add(card)` -- add the card to the hand
-* `remove(position)` -- remove the card at position where position is an integer describing the index of the card in your hand.  Because most people do not start counting at zero, the index of the card should start with for the first card in your hand.
+* `remove(position)` -- remove the card at position where position is an integer describing the index of the card in your hand.
 * `num_in_suit(aSuit)` -- returns an integer representing the number of cards in the hand with the given suit.
 * `num_in_rank(aRank)` -- returns an integer representing the number of cards in the hand with a given rank.
 * `find_card(rank, suit)` -- returns the position (as an integer) of the card having rank and suit or -1 if the card is not found
