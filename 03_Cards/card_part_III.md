@@ -133,7 +133,7 @@ The Pile class is used mainly for the discard pile, when first created a pile ha
 The Hand class is similar to Pile, but it should allow you to remove any card from the hand rather than just the card on the top of the pile.
 
 * `add(card)` -- add the card to the hand
-* `remove(position)` -- remove the card at position where position is an integer describing the index of the card in your hand.  Because most people do not start counting at zero, the index of the card should start with for the first card in your hand.
+* `remove(position)` -- remove the card at position where position is an integer describing the index of the card in your hand.
 * `num_in_suit(aSuit)` -- returns an integer representing the number of cards in the hand with the given suit.
 * `num_in_rank(aRank)` -- returns an integer representing the number of cards in the hand with a given rank.
 * `find_card(rank, suit)` -- returns the position (as an integer) of the card having rank and suit or -1 if the card is not found
@@ -149,3 +149,52 @@ You must work with a partner (or one group of 3). For this part.
 
 1. By Wednesday you will write a set of unittests for either Hand or Pile
 2. By Friday you will write the class definition for the class that your partner wrote the tests for.
+
+
+### Here are my tests
+
+```
+class TestClassPile(unittest.TestCase):
+
+    def test_pile(self):
+        d = Deck()
+        p = Pile()
+        c = d.draw()
+        p.add(c)
+        self.assertEqual(len(p),1)
+        self.assertEqual(str(p),'2 of Spades')
+        self.assertEqual(p.top_rank(), '2')
+        self.assertEqual(p.top_suit(), 'Spades')
+        c = p.remove()
+        self.assertEqual(c,Card(2,'Spades'))
+
+    def test_pile2(self):
+        d = Deck()
+        p = Pile()
+        for i in range(13):
+            p.add(d.draw())
+        self.assertEqual(len(p),13)
+        x = p.remove_all()
+        self.assertEqual(len(x),13)
+        self.assertEqual(len(p),0)
+
+
+class TestClassHand(unittest.TestCase):
+    def test_hand(self):
+        d = Deck()
+        h = Hand()
+        for i in range(5):
+            h.add(d.draw())
+        self.assertEqual(len(h),5)
+        self.assertEqual(h.num_in_suit('Spades'), 5)
+        self.assertEqual(h.num_in_rank('3'), 1)
+        x = h.remove(1)
+        self.assertEqual(x,Card(3,'Spades'))
+        x = h.find_suit('Spades')
+        self.assertEqual(x,[0,1,2,3])
+        x = h.find_rank('4')
+        self.assertEqual(x,[1])
+        self.assertEqual(h[0],Card(2,'Spades'))
+        self.assertEqual(h.find_card(4,'Spades'),1)
+```
+

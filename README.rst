@@ -8,6 +8,7 @@ Setting up Your Environment
 * Since we are in Olin 112 please bring  your laptops to class
 * Make sure you register for cs160fall16 at http://interactivepython.org
 * Download and install the latest `PyCharm <https://www.jetbrains.com/pycharm/download/>`_ on your computer
+* Python's `unittest documentation <https://docs.python.org/3.5/library/unittest.html>`_
 
 Weekly Goals
 ------------
