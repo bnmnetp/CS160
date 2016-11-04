@@ -66,4 +66,4 @@ Extra Credit
 Deadline
 --------
 
-The project is due by April 13 at 5pm
+The project is due by November 11 at 5pm
