@@ -53,4 +53,4 @@ As usual, you should work on this in stages.
 Due
 ---
 
-Monday May 2nd by 11:59pm.
+Friday Dec 2nd by 5:59pm.
